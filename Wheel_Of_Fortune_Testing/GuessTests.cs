@@ -11,13 +11,26 @@ namespace Wheel_Of_Fortune_Testing
         string samplePuzzleWithSpaces = "Some words";
         string correctSampleLetter = "w";
         string incorrectSampleLetter = "a";
+        string integerAsString = "1";
+
+        [TestMethod]
+        public void TestGuessIsAlpha()
+        {
+            //Arrange
+            // need a sample puzzle, sring int
+
+            // Act
+
+            // Assert
+        }
 
         [TestMethod]
         public void TestGuessLetterNoSpaces()
         {
-           //Arrange
-           // need a sample puzzle, letter
-           
+            //Arrange
+            // need a sample puzzle, letter
+            // must not be string int
+
 
             // Act
 
@@ -29,7 +42,7 @@ namespace Wheel_Of_Fortune_Testing
         {
             //Arrange
             // need a sample puzzle, solution
-            //
+            // must not be string int
 
             // Act
 
@@ -41,7 +54,7 @@ namespace Wheel_Of_Fortune_Testing
         {
             //Arrange
             // need a sample puzzle, letter
-            //
+            // must not be string int
 
             // Act
 
@@ -53,7 +66,7 @@ namespace Wheel_Of_Fortune_Testing
         {
             //Arrange
             // need a sample puzzle, solution
-            //
+            // must not be string int
 
             // Act
 
