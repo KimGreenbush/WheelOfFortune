@@ -13,55 +13,38 @@ namespace Wheel_Of_Fortune_Testing
         // string samplePuzzleWithSpaces = "Some words";
         // string correctSampleLetter = "w";
         // string incorrectSampleLetter = "a";
-        // string integerAsLetter = "1";
+
+        [DataTestMethod]
+        [DataRow("1")]
+        [DataRow(".")]
+        public void TestGuessIsNotAlpha(string value)
+        {
+            bool isALetter = Regex.IsMatch( value, @"^[a-zA-Z]+$" );
+            Assert.IsFalse( isALetter, "Input should not accept non-characters as letters." );
+        }
 
         [TestMethod]
         public void TestGuessIsAlpha()
         {
-            bool isALetter = Regex.IsMatch( "1", @"^[a-zA-Z]+$" );
-
-            Assert.IsFalse( isALetter, "Input should only contain letters." );
+            bool isALetter = Regex.IsMatch( "a", @"^[a-zA-Z]+$" );
+            Assert.IsTrue( isALetter, "Input should only contain letters." );
         }
 
-        //[TestMethod]
-        //public void TestGuessLetterNoSpaces()
-       // {
+        [TestMethod]
+        public void TestGuessLetter()
+        {
             //Arrange
             // need a sample puzzle, letter
             // must not be string int
 
-
             // Act
 
             // Assert
-       // }
+        }
+
 
         //[TestMethod]
         //public void TestSolvePuzzleNoSpaces()
-        //{
-            //Arrange
-            // need a sample puzzle, solution
-            // must not be string int
-
-            // Act
-
-            // Assert
-       // }
-
-        //[TestMethod]
-        //public void TestGuessLetterWithSpaces()
-       // {
-            //Arrange
-            // need a sample puzzle, letter
-            // must not be string int
-
-            // Act
-
-            // Assert
-       // }
-
-        //[TestMethod]
-        //public void TestSolvePuzzleWithSpaces()
         //{
             //Arrange
             // need a sample puzzle, solution
