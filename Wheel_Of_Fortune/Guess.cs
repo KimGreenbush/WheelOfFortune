@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace Wheel_Of_Fortune
@@ -15,27 +16,30 @@ namespace Wheel_Of_Fortune
         static bool IsAlpha(string guess)
         {
             bool isOnlyLetters = Regex.IsMatch( guess, @"^[a-zA-Z]+$" );
-
-            if ( !isOnlyLetters )
-            {
-                throw new Exception( "Guess should only contain letters." );
-            }
             return isOnlyLetters;
-          
+
         }
 
         /// <summary>
-        /// 
+        /// Takes a letter to pass to the Puzzle for comparison.
         /// </summary>
-        /// <param name="letter"></param>
-        /// <returns></returns>
+        /// <param name="letter">A string of only one character.</param>
+        /// <paramref name="letter"/>
+        /// <exception cref="ArgumentException">Throws an ArugmentException if the letter is not an alpha character.</exception>
+        /// <returns> <see cref="bool">true</see> if the letter is a match, or <see cref="bool">false</see> </returns>s
+        /// 
         public static bool GuessLetter(string letter)
         {
-            // check isAlpha
-            // pass letter to Puzzle CheckLetter(string) => return bool
-            // true print "Correct letter"
-            // false print "Incorrect letter"
-            // isCorrect = response from Puzzle
+            bool isAlpha = IsAlpha( letter );
+            bool isCorrect = false;
+            if ( !isAlpha )
+            {
+                throw new ArgumentException( "Guess should only be a letter." );
+            }
+            else
+            {
+                // isCorrect = Puzzle.CheckLetter( string );
+            }
             return isCorrect;
         }
 
