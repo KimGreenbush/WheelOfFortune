@@ -17,20 +17,20 @@ namespace Wheel_Of_Fortune_Testing
             Assert.IsFalse( isALetter, "Input should not accept non-characters as letters." );
         }
 
-        //[DataTestMethod]
-        //[DataRow( "A" )]
-        //[DataRow( "a" )]
-        //public void TestGuessLetterReturnsTrueIfInPuzzle(string letter)
-        //{
+        [DataTestMethod]
+        [DataRow( "A" )]
+        [DataRow( "a" )]
+        public void TestGuessLetterReturnsTrueIfInPuzzle(string letter)
+        {
             //Arrange
-         //   bool guess = false;
+            bool guess = false;
 
             // Act
-            // guess = Guess.GuessLetter( letter );
+            guess = Guess.GuessLetter( letter );
 
-         //   // Assert
-         //   Assert.IsTrue(guess, "Passed letter failed comparison check.");
-        //}
+            // Assert
+            Assert.IsTrue(guess, "Passed letter failed comparison check.");
+        }
 
         [DataTestMethod]
         [DataRow( "." )]
@@ -44,19 +44,19 @@ namespace Wheel_Of_Fortune_Testing
         }
 
 
-        //[DataTestMethod]
-        //[DataRow( "A" )]
-        //[DataRow( "a" )]
-        //public void TestSolvePuzzleReturnsTrueIfGuessMatches(string value)
-        //{
-        //Arrange
-        // need a sample puzzle, solution
-        // must not be string int
+        [DataTestMethod]
+        [DataRow( "A" )]
+        [DataRow( "a" )]
+        public void TestSolvePuzzleReturnsTrueIfGuessMatches(string value)
+        {
+            //Arrange
+            bool guess = false;
 
-        // Act
+            // Act
 
-        // Assert
-        // }
+            // Assert
+            Assert.IsTrue( guess, "Passed solution failed comparison check." );
+        }
 
         [DataTestMethod]
         [DataRow( "READ." )]
