@@ -18,17 +18,12 @@ namespace Wheel_Of_Fortune_Testing
         }
 
         [DataTestMethod]
-        [DataRow( "A" )]
-        [DataRow( "a" )]
+        [DataRow( "j" )]
+        [DataRow( "o" )]
         public void TestGuessLetterReturnsTrueIfInPuzzle(string letter)
         {
-            //Arrange
-            bool guess = false;
+            bool guess = Guess.GuessLetter( letter );
 
-            // Act
-            guess = Guess.GuessLetter( letter );
-
-            // Assert
             Assert.IsTrue(guess, "Passed letter failed comparison check.");
         }
 
@@ -37,24 +32,16 @@ namespace Wheel_Of_Fortune_Testing
         [DataRow( "1" )]
         public void TestGuessLetterReturnsErrorIfPassedInvalidGuess( string letter )
         {
-            // Assert
             Assert.ThrowsException<ArgumentException>(
                 () => Guess.GuessLetter( letter ), 
                 "Guess was not an alpha character (letter)");
         }
 
-
-        [DataTestMethod]
-        [DataRow( "A" )]
-        [DataRow( "a" )]
-        public void TestSolvePuzzleReturnsTrueIfGuessMatches(string value)
+        [TestMethod]
+        public void TestSolvePuzzleReturnsTrueIfGuessMatches()
         {
-            //Arrange
-            bool guess = false;
+            bool guess = Guess.SolvePuzzle( "jog" );
 
-            // Act
-
-            // Assert
             Assert.IsTrue( guess, "Passed solution failed comparison check." );
         }
 
