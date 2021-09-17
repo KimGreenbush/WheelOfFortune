@@ -6,15 +6,15 @@ namespace Wheel_Of_Fortune
     public abstract class Guess
     {
         private static readonly PuzzleController puzzle = PuzzleController.GetInstance();
-        private static bool isCorrect = false;
-        private static bool isAlpha = false;
+        private bool isCorrect = false;
+        private bool isAlpha = false;
 
         /// <summary>
         /// Checks that the input value only contains alpha characters (letters).
         /// </summary>
         /// <param name="guess"></param>
         /// <returns></returns>
-        static bool IsAlpha(string guess)
+        bool IsAlpha(string guess)
         {
             bool isOnlyLetters = Regex.IsMatch( guess, @"^[a-zA-Z]+$" );
             return isOnlyLetters;
@@ -27,7 +27,7 @@ namespace Wheel_Of_Fortune
         /// <exception cref="ArgumentException">Throws an ArugmentException if the letter is not an alpha character.</exception>
         /// <returns> <see cref="bool">true</see> if the letter is a match, or <see cref="bool">false</see></returns>
         /// 
-        public static bool GuessLetter(string letter)
+        public bool GuessLetter(string letter)
         {
             isAlpha = IsAlpha( letter );
             if ( !isAlpha )
@@ -49,7 +49,7 @@ namespace Wheel_Of_Fortune
         /// <exception cref="ArgumentException">Throws an ArugmentException if any letters are not an alpha character.</exception>
         /// <returns> <see cref="bool">true</see> if the string is a match, or <see cref="bool">false</see></returns>
         /// 
-        public static bool SolvePuzzle(string attemptedSolution)
+        public bool SolvePuzzle(string attemptedSolution)
         {
             isAlpha = IsAlpha( attemptedSolution );
             if ( !isAlpha )
