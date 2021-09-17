@@ -12,6 +12,7 @@ namespace Wheel_Of_Fortune
         public void StartGame()
         {
             StartMenu menu = new StartMenu();
+            // TODO: Call GeneratePuzzle();
             menu.GetGameStartDisplay();
             ContinueGame();
         }
@@ -30,16 +31,35 @@ namespace Wheel_Of_Fortune
              * display Puzzle
              * display Previously Guessed Letters
             */
+            DisplayGamePuzzle();
 
             // Displays a users turn options
             WriteLine(options.GetPlayerOptions());
 
             // Users choice on how to proceed
+            // TODO: Error Handling
             string playerEntry = ReadLine();
 
             // Based on a users selection, the relevant methods will display next steps
             // and then capture the players guess/solve entries
             options.HandlePlayerSelection(playerEntry);
+        }
+
+        /// <summary>
+        /// Dipslays the puzzle hint, the puzzle itselft, and all previously guessed letters.
+        /// </summary>
+        public void DisplayGamePuzzle()
+        {
+            PuzzleController obj = PuzzleController.GetInstance();
+            var puzzleObj = obj.GetPuzzleObject();
+
+            string hint = puzzleObj.hint;
+            string currentStatusPuzzle = puzzleObj.currentStatusPuzzle;
+            string guessedLetter = puzzleObj.guessedLetter;
+
+            WriteLine($"\nHINT: {hint}");
+            WriteLine($"\nPUZZLE: {currentStatusPuzzle}");
+            WriteLine($"\nGUESSED LETTERS: {guessedLetter}");
         }
 
         /// <summary>
