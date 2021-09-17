@@ -21,6 +21,7 @@ namespace Wheel_Of_Fortune
             if (obj == null)
             {
                 obj = new PuzzleController();
+                obj.GeneratePuzzle();
             }
             return obj;
         }
