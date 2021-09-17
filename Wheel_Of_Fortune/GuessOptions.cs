@@ -12,7 +12,7 @@ namespace Wheel_Of_Fortune
         /// <returns>A boolean signaling whether or not the puzzle includes a given letter.</returns>
         public bool GetChooseLetterOptions()
         {
-            WriteLine("\nPlease choose a letter between A - Z, and then press ENTER");
+            WriteLine("\nPlease choose a letter between A - Z, and then press ENTER\n");
             string playerEntry = ReadLine().ToLower();
 
             // IMPORTANT TODO: Need to add error handling for incorrect key entries
@@ -27,7 +27,7 @@ namespace Wheel_Of_Fortune
         /// <returns>A boolean that signals if a user has correctly solved the puzzle.</returns>
         public bool GetSolvePuzzleOptions()
         {
-            WriteLine("\nYou may solve the puzzle at this time, and then press ENTER");
+            WriteLine("\nYou may solve the puzzle at this time, and then press ENTER\n");
             string playerEntry = ReadLine();
 
             // IMPORTANT TODO: Need to add error handling for incorrect key entries
