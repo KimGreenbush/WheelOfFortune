@@ -57,5 +57,16 @@ namespace Wheel_Of_Fortune_Testing
 
         // Assert
         // }
+
+        [DataTestMethod]
+        [DataRow( "READ." )]
+        [DataRow( "123" )]
+        public void TestSolvePuzzleReturnsErrorIfPassedInvalidGuess( string word )
+        {
+            // Assert
+            Assert.ThrowsException<ArgumentException>(
+                () => Guess.SolvePuzzle( word ),
+                "Guess contained non-alpha characters (letters)" );
+        }
     }
 }
