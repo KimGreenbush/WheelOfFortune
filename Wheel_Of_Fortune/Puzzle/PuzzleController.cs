@@ -21,7 +21,7 @@ namespace Wheel_Of_Fortune
             if (obj == null)
             {
                 obj = new PuzzleController();
-                obj.GeneratePuzzle();
+                obj.GeneratePuzzle(0);
             }
             return obj;
         }
@@ -34,11 +34,11 @@ namespace Wheel_Of_Fortune
             puzzles[1] = new Puzzle("read", "an action");
         }
 
-        // Create new puzzle
-        public void GeneratePuzzle()
-        {
-            GeneratePuzzle(index++);
-        }
+        //// Create new puzzle
+        //public void GeneratePuzzle()
+        //{
+        //    GeneratePuzzle(index++);
+        //}
 
         // For unit test purpose
         public void GeneratePuzzle(int index)
