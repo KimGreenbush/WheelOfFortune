@@ -3,7 +3,7 @@ using static System.Console;
 
 namespace Wheel_Of_Fortune
 {
-    class GuessOptions
+    class GuessOptions : Guess
     {
         /// <summary>
         /// Displays instructions on how to guess a letter, captures the user input,
@@ -16,7 +16,7 @@ namespace Wheel_Of_Fortune
             string playerEntry = ReadLine().ToLower();
 
             // IMPORTANT TODO: Need to add error handling for incorrect key entries
-            bool guessedCorrectly = Guess.GuessLetter(playerEntry);
+            bool guessedCorrectly = GuessLetter(playerEntry);
             return guessedCorrectly;
         }
 
@@ -31,7 +31,7 @@ namespace Wheel_Of_Fortune
             string playerEntry = ReadLine();
 
             // IMPORTANT TODO: Need to add error handling for incorrect key entries
-            bool guessedCorrectly = Guess.SolvePuzzle(playerEntry);
+            bool guessedCorrectly = SolvePuzzle(playerEntry);
             return guessedCorrectly; 
         }
     }
