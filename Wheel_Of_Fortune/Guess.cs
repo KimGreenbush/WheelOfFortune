@@ -59,7 +59,7 @@ namespace Wheel_Of_Fortune
             else
             {
                 attemptedSolution.ToLower();
-                isCorrect = puzzle.SolvePuzzle( attemptedSolution );
+                isCorrect = puzzle.SolveProblem( attemptedSolution );
             }
             return isCorrect;
         }
