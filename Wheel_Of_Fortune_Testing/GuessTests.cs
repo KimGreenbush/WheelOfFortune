@@ -2,18 +2,12 @@ using System;
 using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Wheel_Of_Fortune;
-using Moq;
 
 namespace Wheel_Of_Fortune_Testing
 {
     [TestClass]
     public class GuessTests
     {
-        // string samplePuzzleNoSpaces = "Word";
-        // string samplePuzzleWithSpaces = "Some words";
-        // string correctSampleLetter = "w";
-        // string incorrectSampleLetter = "a";
-
         [DataTestMethod]
         [DataRow("1")]
         [DataRow(".")]
@@ -23,36 +17,45 @@ namespace Wheel_Of_Fortune_Testing
             Assert.IsFalse( isALetter, "Input should not accept non-characters as letters." );
         }
 
-        [TestMethod]
-        public void TestGuessIsAlpha()
-        {
-            bool isALetter = Regex.IsMatch( "a", @"^[a-zA-Z]+$" );
-            Assert.IsTrue( isALetter, "Input should only contain letters." );
-        }
-
-        [TestMethod]
-        public void TestGuessLetter()
-        {
-            //Arrange
-            // need a sample puzzle, letter
-            // must not be string int
-
-            // Act
-
-            // Assert
-        }
-
-
-        //[TestMethod]
-        //public void TestSolvePuzzleNoSpaces()
+        //[DataTestMethod]
+        //[DataRow( "A" )]
+        //[DataRow( "a" )]
+        //public void TestGuessLetterReturnsTrueIfInPuzzle(string letter)
         //{
             //Arrange
-            // need a sample puzzle, solution
-            // must not be string int
+         //   bool guess = false;
 
             // Act
+            // guess = Guess.GuessLetter( letter );
 
+         //   // Assert
+         //   Assert.IsTrue(guess, "Passed letter failed comparison check.");
+        //}
+
+        [DataTestMethod]
+        [DataRow( "." )]
+        [DataRow( "1" )]
+        public void TestGuessLetterReturnsErrorIfPassedInvalidGuess( string letter )
+        {
             // Assert
-       // }
+            Assert.ThrowsException<ArgumentException>(
+                () => Guess.GuessLetter( letter ), 
+                "Guess was not an alpha character (letter)");
+        }
+
+
+        //[DataTestMethod]
+        //[DataRow( "A" )]
+        //[DataRow( "a" )]
+        //public void TestSolvePuzzleReturnsTrueIfGuessMatches(string value)
+        //{
+        //Arrange
+        // need a sample puzzle, solution
+        // must not be string int
+
+        // Act
+
+        // Assert
+        // }
     }
 }

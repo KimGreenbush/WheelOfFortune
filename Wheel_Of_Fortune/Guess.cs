@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace Wheel_Of_Fortune
@@ -18,14 +17,12 @@ namespace Wheel_Of_Fortune
         {
             bool isOnlyLetters = Regex.IsMatch( guess, @"^[a-zA-Z]+$" );
             return isOnlyLetters;
-
         }
 
         /// <summary>
-        /// Takes a letter to pass to the Puzzle for comparison.
+        /// Takes an input string one character long to pass to the Puzzle for comparison.
         /// </summary>
         /// <param name="letter">A string of only one character.</param>
-        /// <paramref name="letter"/>
         /// <exception cref="ArgumentException">Throws an ArugmentException if the letter is not an alpha character.</exception>
         /// <returns> <see cref="bool">true</see> if the letter is a match, or <see cref="bool">false</see></returns>
         /// 
@@ -39,18 +36,18 @@ namespace Wheel_Of_Fortune
             else
             {
                 // need to implement
-                // isCorrect = Puzzle.CheckLetter( string );
+                letter.ToLower();
+                // isCorrect = Puzzle.CheckLetter( letter );
             }
             return isCorrect;
         }
 
         /// <summary>
-        /// Takes a string longer than one letter to pass to the Puzzle for comparison.
+        /// Takes an input string longer than one character to pass to the Puzzle for comparison.
         /// </summary>
         /// <param name="attemptedSolution">A string of more than one character.</param>
-        /// <paramref name="attemptedSolution"/>
         /// <exception cref="ArgumentException">Throws an ArugmentException if any letters are not an alpha character.</exception>
-        /// <returns> <see cref="bool">true</see> if the letter is a match, or <see cref="bool">false</see></returns>
+        /// <returns> <see cref="bool">true</see> if the string is a match, or <see cref="bool">false</see></returns>
         /// 
         public static bool SolvePuzzle(string attemptedSolution)
         {
@@ -62,6 +59,7 @@ namespace Wheel_Of_Fortune
             else
             {
                 // need to implement
+                attemptedSolution.ToLower();
                 // isCorrect = Puzzle.SolvePuzzle( string );
             }
             return isCorrect;
