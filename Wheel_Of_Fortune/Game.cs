@@ -13,7 +13,9 @@ namespace Wheel_Of_Fortune
         {
             StartMenu menu = new StartMenu();
             // TODO: Call GeneratePuzzle();
+            Console.ForegroundColor = ConsoleColor.Blue;
             menu.GetGameStartDisplay();
+            Console.ForegroundColor = ConsoleColor.White;
             ContinueGame();
         }
 
@@ -52,9 +54,11 @@ namespace Wheel_Of_Fortune
             string currentStatusPuzzle = puzzleObj.currentStatusPuzzle;
             string guessedLetter = puzzleObj.guessedLetter;
 
+            Console.ForegroundColor = ConsoleColor.Yellow;
             WriteLine($"\nHINT: {hint}");
             WriteLine($"\nPUZZLE: {currentStatusPuzzle}");
             WriteLine($"\nGUESSED LETTERS: {guessedLetter}");
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         /// <summary>
@@ -63,8 +67,10 @@ namespace Wheel_Of_Fortune
         /// </summary>
         public void PlayerWinsGame()
         {
-            WriteLine("YOU WIN... You solved the puzzle");
+            Console.ForegroundColor = ConsoleColor.Green;
+            WriteLine("\nYOU WIN... You solved the puzzle");
             // TODO: Add new set of options (where to go from here)
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         /// <summary>

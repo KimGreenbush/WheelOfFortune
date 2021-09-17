@@ -35,13 +35,17 @@ namespace Wheel_Of_Fortune
                     if (isCorrectGuess)
                     {
                         Clear();
+                        Console.ForegroundColor = ConsoleColor.Green;
                         WriteLine("\nGood job! You guessed correctly. Here is the updated puzzle.");
+                        Console.ForegroundColor = ConsoleColor.White;
                         game.ContinueGame();
                     }
                     else
                     {
                         Clear();
+                        Console.ForegroundColor = ConsoleColor.Red;
                         WriteLine("\nIncorrect entry! Please continue the game");
+                        Console.ForegroundColor = ConsoleColor.White;
                         game.ContinueGame();
                     }
                     break;
@@ -56,11 +60,13 @@ namespace Wheel_Of_Fortune
                     else
                     {
                         Clear();
+                        Console.ForegroundColor = ConsoleColor.Red;
                         WriteLine("\nIncorrect entry! Please continue the game");
+                        Console.ForegroundColor = ConsoleColor.White;
                         game.ContinueGame();
                     }
                     break;
-                
+
                 // Quiting the game
                 case "3":
                     WriteLine("Goodbye!");
@@ -68,11 +74,13 @@ namespace Wheel_Of_Fortune
                     break;
 
                 default:
-                    WriteLine("Current default statement in switch");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    WriteLine("Incorrect Entry... Please choose again.");
+                    Console.ForegroundColor = ConsoleColor.White;
                     // TODO: Error handling 
                     game.ContinueGame();
                     break;
-            } 
+            }
         }
     }
 }
