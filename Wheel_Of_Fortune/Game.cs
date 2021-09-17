@@ -25,12 +25,7 @@ namespace Wheel_Of_Fortune
         {
             TurnOptions options = new TurnOptions();
 
-            /*
-             * NOTE: This comes from Tracy method "GetPuzzleObject()" that returns an object.
-             * display Hint
-             * display Puzzle
-             * display Previously Guessed Letters
-            */
+            // Displays hint, puzzle, and previously guessed letters
             DisplayGamePuzzle();
 
             // Displays a users turn options
