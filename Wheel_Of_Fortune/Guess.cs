@@ -5,6 +5,7 @@ namespace Wheel_Of_Fortune
 {
     public static class Guess
     {
+        public static PuzzleController puzzle = PuzzleController.GetInstance();
         private static bool isCorrect = false;
         private static bool isAlpha = false;
 
@@ -35,9 +36,8 @@ namespace Wheel_Of_Fortune
             }
             else
             {
-                // need to implement
                 letter.ToLower();
-                // isCorrect = Puzzle.CheckLetter( letter );
+                isCorrect = puzzle.CheckLetter( letter );
             }
             return isCorrect;
         }
@@ -58,9 +58,8 @@ namespace Wheel_Of_Fortune
             }
             else
             {
-                // need to implement
                 attemptedSolution.ToLower();
-                // isCorrect = Puzzle.SolvePuzzle( string );
+                isCorrect = puzzle.SolvePuzzle( string );
             }
             return isCorrect;
         }
