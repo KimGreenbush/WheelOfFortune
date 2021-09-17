@@ -16,7 +16,7 @@ namespace Wheel_Of_Fortune
             string playerEntry = ReadLine().ToLower();
 
             // IMPORTANT TODO: Need to add error handling for incorrect key entries
-            bool guessedCorrectly = GuessLetter(playerEntry);
+            bool guessedCorrectly = Guess.GuessLetter(playerEntry);
             return guessedCorrectly;
         }
 
@@ -31,7 +31,7 @@ namespace Wheel_Of_Fortune
             string playerEntry = ReadLine();
 
             // IMPORTANT TODO: Need to add error handling for incorrect key entries
-            bool guessedCorrectly = SolvePuzzle(playerEntry);
+            bool guessedCorrectly = Guess.SolvePuzzle(playerEntry);
             return guessedCorrectly; 
         }
     }
