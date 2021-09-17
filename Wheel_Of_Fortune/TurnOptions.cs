@@ -29,6 +29,7 @@ namespace Wheel_Of_Fortune
 
             switch (userEntry)
             {
+                // Guessing a letter
                 case "1":
                     isCorrectGuess = options.GetChooseLetterOptions();
                     if (isCorrectGuess)
@@ -45,6 +46,7 @@ namespace Wheel_Of_Fortune
                     }
                     break;
 
+                // Solving the puzzle
                 case "2":
                     isCorrectGuess = options.GetSolvePuzzleOptions();
                     if (isCorrectGuess)
@@ -58,7 +60,8 @@ namespace Wheel_Of_Fortune
                         game.ContinueGame();
                     }
                     break;
-
+                
+                // Quiting the game
                 case "3":
                     WriteLine("Goodbye!");
                     game.QuitGame();
