@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Wheel_Of_Fortune
 {
-    public static class Guess
+    public abstract class Guess
     {
         private static readonly PuzzleController puzzle = PuzzleController.GetInstance();
         private static bool isCorrect = false;

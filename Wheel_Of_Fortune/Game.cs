@@ -12,7 +12,6 @@ namespace Wheel_Of_Fortune
         public void StartGame()
         {
             StartMenu menu = new StartMenu();
-            // TODO: Call GeneratePuzzle();
             Console.ForegroundColor = ConsoleColor.Blue;
             menu.GetGameStartDisplay();
             Console.ForegroundColor = ConsoleColor.White;
@@ -43,7 +42,7 @@ namespace Wheel_Of_Fortune
         }
 
         /// <summary>
-        /// Dipslays the puzzle hint, the puzzle itselft, and all previously guessed letters.
+        /// Dipslays the puzzle hint, the puzzle itself, and all previously guessed letters.
         /// </summary>
         public void DisplayGamePuzzle()
         {
